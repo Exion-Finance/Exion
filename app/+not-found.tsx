@@ -1,18 +1,22 @@
 import { Link, Stack } from 'expo-router';
-import { StyleSheet } from 'react-native';
-
-import { Text, View } from '@/components/Themed';
+import { StyleSheet, View } from 'react-native';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { SecondaryFontText } from "@/components/SecondaryFontText";
+import { PrimaryFontMedium } from '@/components/PrimaryFontMedium';
+import { StatusBar } from 'expo-status-bar';
 
 export default function NotFoundScreen() {
   return (
     <>
-      <Stack.Screen options={{ title: 'Oops!' }} />
+      <Stack.Screen options={{ title: 'Oops!', headerShown: true, headerTitleStyle: {
+      fontFamily: 'DMSansMedium',
+      fontSize: 19,
+    } }} />
       <View style={styles.container}>
-        <Text style={styles.title}>This screen doesn't exist.</Text>
-
-        <Link href="/" style={styles.link}>
-          <Text style={styles.linkText}>Go to home screen!</Text>
-        </Link>
+        <StatusBar style='dark'/>
+        <Ionicons name="notifications" size={40} color="white" />
+        <SecondaryFontText style={styles.title}>This screen doesn't exist.</SecondaryFontText>
+        <PrimaryFontMedium style={styles.linkText}>Looks like you lost your way</PrimaryFontMedium>
       </View>
     </>
   );
@@ -24,17 +28,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,
+    backgroundColor: '#f8f8f8'
   },
   title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  link: {
-    marginTop: 15,
-    paddingVertical: 15,
+    fontSize: 25,
+    color: 'black',
+    marginTop: 26,
+    textAlign: 'center'
   },
   linkText: {
-    fontSize: 14,
-    color: '#2e78b7',
+    fontSize: 16,
+    marginTop: 15,
+    color: 'grey',
   },
 });
