@@ -157,7 +157,7 @@ export default function TabOneScreen() {
 
             <View style={[reusableStyle.rowJustifyBetween, { height: '32%', alignItems: 'flex-start' }]}>
               <View>
-                <PrimaryFontMedium style={{ color: '#ffffff', fontSize: 17 }}>Available Balance</PrimaryFontMedium>
+                <PrimaryFontMedium style={{ color: '#ffffff', fontSize: 17 }}>Available Balance (Ksh)</PrimaryFontMedium>
                 <PrimaryFontMedium style={{ color: '#ffffff', fontSize: 45, marginTop: 3 }}>${balance.usd.toFixed(4)}</PrimaryFontMedium>
               </View>
               <SecondaryButton
@@ -191,7 +191,7 @@ export default function TabOneScreen() {
       </ImageBackground>
 
       <View style={[reusableStyle.paddingContainer, reusableStyle.rowJustifyBetween, { paddingVertical: 20, backgroundColor: 'white' }]}>
-        <PrimaryFontMedium style={{ fontSize: 25 }}>Recent activities</PrimaryFontMedium>
+        <PrimaryFontMedium style={{ fontSize: 25 }}>Recent transactions</PrimaryFontMedium>
         <Pressable onPress={() => route.push('/transactions')}>
           <PrimaryFontMedium style={{ fontSize: 17, color: '#00C48F' }}>See all</PrimaryFontMedium>
         </Pressable>
